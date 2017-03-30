@@ -87,7 +87,7 @@ test('verify that settings are correctly set after default instantiation', (t) =
     attachment: false,
     postback: false,
     quickReply: false,
-    echo: false,
+    echo: true,
     read: false,
     delivery: false,
   }, 'bot.receives is not as expected');
@@ -115,15 +115,19 @@ test('instantiating with landingPageUrl sets it correctly', (t) => {
 });
 
 test('instantiating with valid storeTeamInfoHooks works', (t) => {
-  t.plan(1);
+  t.plan(2);
+
+  const storeTeamInfo = async () => 'myTeamInfo';
+  const getTeamInfo = async () => 'myTeamInfo';
 
   const bot = new SlackBot({
     credentials: config.slackCredentials(),
     webhookEndpoint: 'webhook',
     storeTeamInfoHooks: {
-      storeTeamInfo: async () => 'myTeamInfo',
-      getTeamInfo: async () => 'myTeamInfo',
+      storeTeamInfo,
+      getTeamInfo,
     },
   });
-  t.is(bot.landingPageUrl, 'someOtherPage', 'landingPageUrl not as expected');
+  t.is(bot.storeTeamInfoHooks.storeTeamInfo, storeTeamInfo, 'wrong storeTeamInfo function');
+  t.is(bot.storeTeamInfoHooks.getTeamInfo, getTeamInfo, 'wrong getTeamInfo function');
 });

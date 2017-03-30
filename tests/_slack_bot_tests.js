@@ -55,23 +55,6 @@
 //     server = app.listen(3002, function() { done(); });
 //   });
 
-//   describe('#constructor()', function() {
-//     it('should throw an error when storeTeamInfoInFile and storeTeamInfoHooks are not defined', function(done) {
-//       const badSettings = _.cloneDeep(slackSettings);
-//       badSettings.storeTeamInfoInFile = undefined;
-//       expect(() => new SlackBot(badSettings)).to.throw(
-//         'ERROR: bots of type \'slack\' must be defined with exactly one of storeTeamInfoInFile set to true or storeTeamInfoHooks defined');
-//       done();
-//     });
-//     it('should throw an error when both storeTeamInfoInFile and storeTeamInfoHooks are defined (truthy)', function(done) {
-//       const badSettings = _.cloneDeep(slackSettings);
-//       badSettings.storeTeamInfoInFile = undefined;
-//       expect(() => new SlackBot(badSettings)).to.throw(
-//         'ERROR: bots of type \'slack\' must be defined with exactly one of storeTeamInfoInFile set to true or storeTeamInfoHooks defined');
-//       done();
-//     });
-//   });
-
 //   describe('/webhook endpoint works', function() {
 //     const requestOptions = {
 //       method: 'POST',
@@ -81,45 +64,6 @@
 //       resolveWithFullResponse: true,
 //       simple: false // 4xx errors go through
 //     };
-
-//     describe('#__verifyRequestOrigin', function() {
-//       it('should respond with 403 if verification token is invalid', function() {
-//         return request(requestOptions)
-//         .then(function(res) {
-//           res.statusCode.should.equal(403);
-//         });
-//       });
-
-//       it('should respond with 200 OK if verification token is valid', function() {
-//         const options = _.cloneDeep(requestOptions);
-//         options.body = {
-//           token: credentials.verificationToken
-//         };
-
-//         return request(options)
-//         .then(function(res) {
-//           res.statusCode.should.equal(200);
-//         });
-//       });
-//     });
-
-//     describe('#__respondToVerificationHandshake', function() {
-//       it('should respond with challenge when sending over verification handshake', function() {
-//         const challenge = '3eZbrw1aBm2rZgRNFdxV2595E9CY3gmdALWMmHkvFXO7tYXAYM8P';
-//         const body = {
-//           token: credentials.verificationToken,
-//           challenge,
-//           type: 'url_verification'
-//         };
-//         const options = _.cloneDeep(requestOptions);
-//         options.body = body;
-
-//         return request(options)
-//         .then(function(res) {
-//           res.body.challenge.should.equal(challenge);
-//         });
-//       });
-//     });
 
 //     it('should emit an update event to the bot object when ' +
 //        'slack message is well formatted', function(done) {
