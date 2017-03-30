@@ -10,8 +10,7 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
-testing_creds.md
-tests/config.js
+tests/_config.js
 
 # Application specific files
 node_modules
@@ -19,5 +18,9 @@ npm-debug.log
 
 /logs
 jsconfig.json
+slack_teams_info
+slack_button.html
 .vscode
 coverage
+example_jd.js
+.nyc_output
