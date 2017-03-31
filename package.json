@@ -1,6 +1,6 @@
 {
   "name": "botmaster-slack",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "The Slack integration",
   "main": "lib/index.js",
   "scripts": {
@@ -74,6 +74,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
     "jsdoc": "^3.4.2",
+    "nock": "^9.0.11",
     "nodemon": "^1.11.0",
     "nyc": "^10.1.2"
   }
