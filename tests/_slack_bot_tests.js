@@ -49,53 +49,6 @@
 //   let bot= null;
 //   let server = null;
 
-//   before(function(done){
-//     bot = new SlackBot(slackSettings);
-//     app.use('/', bot.app);
-//     server = app.listen(3002, function() { done(); });
-//   });
-
-//   describe('/webhook endpoint works', function() {
-//     const requestOptions = {
-//       method: 'POST',
-//       uri: 'http://localhost:3002/slack/webhook',
-//       body: {},
-//       json: true,
-//       resolveWithFullResponse: true,
-//       simple: false // 4xx errors go through
-//     };
-
-//     it('should emit an update event to the bot object when ' +
-//        'slack message is well formatted', function(done) {
-
-//       bot.once('update', function() {
-//         done();
-//       });
-
-//       const options = _.cloneDeep(requestOptions);
-//       options.body = baseIncommingMessage;
-
-//       request(options);
-//     });
-
-//     describe('slack #__authorizeApplicationForTeam', function() {
-//       it('should store teamInfo in json file when storeTeamInfoInFile is set to true',
-//          function() {
-//         const jsonFileStoreDB = new JsonFileStore('slack_teams_info');
-
-//         // using bind here as this is how it is coded in the __authorize... function
-//         return bot.storeTeamInfoHooks.storeTeamInfo.bind(undefined, bot)(slackTeamInfo)
-
-//         .then(() => {
-//           const readFromFileTeamInfo = jsonFileStoreDB.getSync(slackTestInfo.team_id);
-//           expect(readFromFileTeamInfo).to.deep.equal(slackTeamInfo);
-//           jsonFileStoreDB.delete(slackTestInfo.team_id);
-//         });
-//       });
-//     });
-
-//   });
-
 //   describe('slack #__formatUpdate(rawUpdate)', function() {
 //     it('should format a text message update in the expected way', function() {
 //       const rawUpdate = baseIncommingMessage;
