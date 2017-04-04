@@ -18,13 +18,13 @@ Find the whole documentation for the framework on: http://botmasterai.com/
 ## Installing
 
 ```bash
-yarn add botmaster-messenger
+yarn add botmaster-slack
 ```
 
 or
 
 ```bash
-npm install --save botmaster-messenger
+npm install --save botmaster-slack
 ```
 
 ## The Botmaster Slack bot
