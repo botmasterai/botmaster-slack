@@ -57,7 +57,7 @@ On this page you were redirected to, you will find an *App credentials* section.
 You don't need to know anything about OAuth to complete this step. Just know that this URL will be called when people are installing/authorizing your app.
 
 In the left panel, click on the **OAuth & Permissions** tab and enter your webhook in the **Redirect URL(s)** field as shown here:
-    ![Slack Setup 1](https://github.com/botmasterai/botmaster-slack/blob/master/images/slack_setup_1.png)
+    ![Slack Setup 1](images/slack_setup_1.png)
 This URL has to be of the form: **https://\<your_base_url\>/slack/\<webhookEndpoint\>**. For example, **if** I am using localtunnel to test the bot locally, and started localtunnel by running the following:
  ```bash
   lt -p 3000 -s botmastersubdomain
@@ -113,7 +113,7 @@ lt -p 3000 -s <wanted_base_url_for_your_bot>
 
 #### Setup Your App's Events and Events Webhook
 
-Go back to the **Event subscription** page and enter your webhook url again. This should now work and look something like this: ![Slack Setup 2](https://github.com/botmasterai/botmaster-slack/blob/master/images/slack_setup_2.png) Scroll down and click on **Add Bot User Events**. At the minimum, add the following events:
+Go back to the **Event subscription** page and enter your webhook url again. This should now work and look something like this: ![Slack Setup 2](images/slack_setup_2.png) Scroll down and click on **Add Bot User Events**. At the minimum, add the following events:
     * message.ipm
     * message.channels
     * message.im
